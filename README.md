@@ -1,4 +1,3 @@
-symfony-test
+Twitterito
 ============
-
-A Symfony project created on March 25, 2015, 1:49 pm.
+Work Sample. Task: Write a simplified twitter clone
