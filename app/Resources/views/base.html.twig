@@ -14,7 +14,9 @@
         {% include 'AppBundle:_partials:header.html.twig' %}
 
         <div class="container-fluid">
-            {% block body %}{% endblock %}
+            {% block body %}
+                {% block fos_user_content %}{% endblock %}
+            {% endblock %}
         </div>
         {% block javascripts %}{% endblock %}
         <script>
