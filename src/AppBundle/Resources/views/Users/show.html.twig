@@ -1,0 +1,30 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Users:show{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-2"></div>
+            <div class="col-sm-8 feed-info single-user">
+                <h3 class="text-center text-primary">
+                    {% if user.id == app.user.id %}
+                        My Tweets
+                    {% else %}
+                        Tweets by {{ user.username|title }}
+                    {% endif %}
+
+                </h3>
+                <div class="feed">
+                    <ul>
+                        {% for tweet in user.tweets %}
+                            <li class="feed-tweet">
+                                <p class="tweet-text">{{ tweet.text }}</p>
+                                <p class="tweet-info text-right">{{ tweet.createdAt|date("H:i M d") }}</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        <div class="col-sm-2"></div>
+    </div>
+{% endblock %}

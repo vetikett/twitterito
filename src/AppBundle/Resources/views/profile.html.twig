@@ -1,0 +1,50 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Tweets:index{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12 col-sm-6">
+            <div class="text-center user-info-section">
+                <div class="user-info">
+                    <p>Tweets:</p>
+                    <p>{{ app.user.tweets|length }}</p>
+                </div>
+                <div class="user-info">
+                    <p>Following:</p>
+                    <p>{{ app.user.following|length }}</p>
+                </div>
+                <div class="user-info">
+                    <p>Followed:</p>
+                    <p>{{ app.user.followed|length }}</p>
+                </div>
+            </div>
+
+            {{ form_start(form) }}
+            {{ form_row(form.text) }}
+            {{ form_row(form.tweet) }}
+            {{ form_rest(form) }}
+            {{ form_end(form) }}
+        </div>
+
+        <div class="col-sm-12 col-sm-6">
+            <div class="feed-info">
+                <h3>Feed</h3>
+            </div>
+
+            <div class="feed">
+                <ul>
+                    {% for tweet in feedTweets %}
+                        {% if tweet.user.isFollowedByMe(app.user.id) or tweet.user.id == app.user.id%}
+                            <li class="feed-tweet">
+                                <p class="tweet-text">{{ tweet.text }}</p>
+                                <p class="tweet-info text-right">by {{ tweet.user.username }} {{ tweet.createdAt|date("H:i M d") }}</p>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

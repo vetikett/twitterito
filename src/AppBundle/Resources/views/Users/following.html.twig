@@ -1,0 +1,17 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Users:index{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <ul>
+            {% for user in user.following %}
+                <li class="display-users col-sm-5">
+                    <a href="{{ path('app_users_show', {'id': user.id}) }}">{{user.username}}</a>
+                    {{ include('AppBundle:_partials:unfollow_button.html.twig') }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

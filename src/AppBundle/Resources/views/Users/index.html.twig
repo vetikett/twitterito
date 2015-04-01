@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Users:index{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <ul class="show-users">
+            {% for user in users %}
+                <li class="display-users col-sm-5">
+                    <a class="display-user" href="{{ path('app_users_show', {'id': user.id}) }}">{{user.username}}</a>
+                    {% if user.isFollowedByMe(app.user.id) %}
+                        {{ include('AppBundle:_partials:unfollow_button.html.twig') }}
+                    {% else %}
+                        {{ include('AppBundle:_partials:follow_button.html.twig') }}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

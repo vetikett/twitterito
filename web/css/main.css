@@ -1,0 +1,108 @@
+.container-fluid {
+    padding: 0 40px;
+}
+input {
+    border: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* header */
+
+.active {
+    border-bottom: 2px solid #337AB7;
+}
+
+.nav-username {
+    border-right: 3px solid #337AB7;
+}
+
+/* Login/registration */
+.auth-form {
+    width: 400px;
+    margin: 0 auto;
+    float: none;
+}
+
+.auth-form .input-group {
+    width: 100%;
+}
+
+.auth-form .checkbox-group label {
+    margin-top: 10px;
+    float: left;
+}
+
+.auth-form .checkbox-group input {
+    width: 136px;
+    float: left;
+}
+
+.register-inputs {
+    margin-bottom: 10px;
+}
+
+
+/* user home */
+
+.user-info {
+    display: inline-block;
+    margin-right: 4%;
+    margin-bottom: 6px;
+    padding: 4px;
+    border-bottom: 1px solid #337AB7;
+}
+
+/* feed */
+
+.feed-info {
+}
+
+.feed-info h3 {
+    padding-bottom: 22px;
+    border-bottom: 1px solid #337AB7;
+}
+
+.feed {
+    margin-left: -40px;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.feed-tweet {
+    padding: 8px 4px 0 4px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.tweet-info {
+
+    font-size: 12px;
+}
+
+/* displaying users */
+.display-users {
+    border-bottom: 1px solid #CCCCCC;
+    margin: 20px;
+}
+
+.display-users input{
+    width: 59px;
+    margin: 11px 0 0 6px;
+}
+
+.display-users a {
+    vertical-align: top;
+    font-size: 28px;
+    color: #777783;
+}
+
+.display-user {
+    display: inline-block;
+}
+
+/* single user */
+
+.single-user {
+}

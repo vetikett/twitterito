@@ -1,0 +1,4 @@
+<form class="display-user" action="{{ path('app_users_unfollow') }}" method="post">
+    <input class="btn-xs btn-warning" type="submit" value="Unfollow"/>
+    <input type="hidden" name="id" value="{{ user.id }}"/>
+</form>
