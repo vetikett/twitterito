@@ -49,7 +49,7 @@ class User extends BaseUser
     public $request;
 
 
-    public function __construct(Request $request)
+    public function __construct()
     {
         parent::__construct();
 
@@ -57,7 +57,6 @@ class User extends BaseUser
         $this->following = new ArrayCollection();
         $this->followed = new ArrayCollection();
         $this->isFollowedByMe = new ArrayCollection();
-        $this->request = $request;
 
     }
 
